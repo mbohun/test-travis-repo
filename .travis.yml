@@ -1,0 +1,15 @@
+language: c
+
+compiler:
+  - gcc
+  
+branches:
+  only:
+  - master
+
+before_install:
+#  - sudo apt-get install -qq libxml2-dev
+  - ldd `which xmllint`
+  - xmllint --version
+
+script: gcc -o main main.c
