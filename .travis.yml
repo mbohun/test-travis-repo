@@ -11,5 +11,7 @@ before_install:
 #  - sudo apt-get install -qq libxml2-dev
   - ldd `which xmllint`
   - xmllint --version
-
+  - xml --version
+  - xmlstarlet --version
+  
 script: gcc -o main main.c
