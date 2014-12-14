@@ -13,6 +13,6 @@ before_install:
 #  - NS="_:"
   - sudo apt-get install -qq xmlstarlet
   - xmlstarlet --version
-  - xmlstarlet sel -t -v "/project/dependencies/dependency/artifactId" pom.xml
+  - xmlstarlet sel -t -v '/project/dependencies/dependency/artifactId' pom.xml
 
 script: gcc -o main main.c
