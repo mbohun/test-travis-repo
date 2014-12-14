@@ -10,5 +10,6 @@ branches:
 before_install:
   - sudo apt-get install -qq xmlstarlet
   - xmlstarlet --version
-  
+  - xmlstarlet sel -t -v '/_:project/_:dependencies/_:dependency/_:artifactId' pom.xml
+
 script: gcc -o main main.c
