@@ -8,10 +8,11 @@ branches:
   - master
 
 before_install:
+  - echo $SHELL
   - NS=""
 #  - NS="_:"
   - sudo apt-get install -qq xmlstarlet
   - xmlstarlet --version
-  - xmlstarlet sel -t -v "/${NS}project/${NS}dependencies/${NS}dependency/${NS}artifactId" pom.xml
+  - xmlstarlet sel -t -v "/project/dependencies/dependency/artifactId" pom.xml
 
 script: gcc -o main main.c
