@@ -8,6 +8,11 @@ branches:
   - master
 
 before_install:
+  - whoami
+  - groups
+  - sudo mkdir /var/log/tomcat6
+  - sudo mkdir /var/log/tomcat7
+  - touch /var/log/tomcat7/test.log
   - echo -e 'setns x=http://maven.apache.org/POM/4.0.0\ncat /x:project/x:dependencies/x:dependency/x:artifactId/text()' | xmllint --shell pom.xml | grep -v / |sort|uniq
 
 script: gcc -o main main.c
